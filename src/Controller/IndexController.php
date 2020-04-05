@@ -11,13 +11,8 @@ use Twig\Environment;
 
 final class IndexController
 {
-    /**
-     * @var \Twig\Environment
-     */
-    private $twig;
-    /**
-     * @var \App\Repository\ProjectRepositoryInterface
-     */
+    private Environment $twig;
+
     private ProjectRepositoryInterface $projectRepository;
 
     public function __construct(

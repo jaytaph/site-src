@@ -48,6 +48,9 @@ final class FileProjectRepository implements ProjectRepositoryInterface
         return $this->projects[$key];
     }
 
+    /**
+     * @return array<string, Project>
+     */
     public function getAll(): array
     {
         return $this->projects;
