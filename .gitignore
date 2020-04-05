@@ -10,3 +10,11 @@
 ###< symfony/framework-bundle ###
 output
 .idea
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+/public/dist/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###

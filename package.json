@@ -1,0 +1,19 @@
+{
+  "name": "@jibbarth/site-src",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Jibbarth/site-src.git",
+  "author": "Jibé Barth <barth.jib@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.0.1",
+    "webpack-notifier": "^1.6.0"
+  },
+  "dependencies": {
+    "@symfony/webpack-encore": "^0.28.3",
+    "tailwind": "^4.0.0",
+    "tailwindcss": "^1.2.0"
+  }
+}

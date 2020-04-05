@@ -16,6 +16,7 @@
         "symfony/http-foundation": "5.0.*",
         "symfony/twig-bridge": "5.0.*",
         "symfony/twig-bundle": "5.0.*",
+        "symfony/webpack-encore-bundle": "^1.7",
         "symfony/yaml": "5.0.*",
         "symplify/autodiscovery": "^7.2",
         "symplify/flex-loader": "^7.2",
