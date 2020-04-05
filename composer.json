@@ -1,4 +1,6 @@
 {
+    "name": "barth/site-src",
+    "description": "Source for building my personal website",
     "type": "project",
     "license": "proprietary",
     "require": {
@@ -23,6 +25,7 @@
         "symplify/symfony-static-dumper": "^7.2"
     },
     "require-dev": {
+        "barth/dev-pack": "dev-master",
         "symfony/maker-bundle": "^1.14"
     },
     "config": {
