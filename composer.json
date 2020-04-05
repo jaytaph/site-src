@@ -5,11 +5,20 @@
         "php": "^7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/cache": "^1.10",
+        "erusev/parsedown-extra": "^0.8.1",
+        "symfony/asset": "5.0.*",
         "symfony/console": "5.0.*",
         "symfony/dotenv": "5.0.*",
-        "symfony/flex": "^1.3.1",
+        "symfony/flex": "^1.6",
         "symfony/framework-bundle": "5.0.*",
-        "symfony/yaml": "5.0.*"
+        "symfony/http-foundation": "5.0.*",
+        "symfony/twig-bridge": "5.0.*",
+        "symfony/twig-bundle": "5.0.*",
+        "symfony/yaml": "5.0.*",
+        "symplify/autodiscovery": "^7.2",
+        "symplify/flex-loader": "^7.2",
+        "symplify/symfony-static-dumper": "^7.2"
     },
     "require-dev": {
     },
