@@ -1,0 +1,34 @@
+# see https://github.com/marketplace/actions/deploy-to-github-pages
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+            persist-credentials: false
+      - uses: shivammathur/setup-php@v1
+        with:
+          php-version: 7.4
+          coverage: none
+      - run: composer install --no-progress
+      -
+        name: Build 📦
+        run: bin/console dump-static-site --ansi
+      -
+        name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY_NAME: Jibbarth/jibbarth.github.io
+          BRANCH: master
+          FOLDER: output
