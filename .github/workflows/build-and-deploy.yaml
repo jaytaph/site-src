@@ -23,9 +23,9 @@ jobs:
           coverage: none
       - run: composer install --no-progress
       - name: Grumphp
-        run: vendor/bin/grumphp run
+        run: vendor/bin/grumphp run --ansi
       - name: PHPInsights
-        run: vendor/bin/phpinsights
+        run: vendor/bin/phpinsights -n --ansi
 
   deploy:
     needs: build-and-test
