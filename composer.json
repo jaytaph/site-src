@@ -5,6 +5,7 @@
         "php": "^7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/annotations": "^1.10",
         "doctrine/cache": "^1.10",
         "erusev/parsedown-extra": "^0.8.1",
         "symfony/asset": "5.0.*",
@@ -21,6 +22,7 @@
         "symplify/symfony-static-dumper": "^7.2"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.14"
     },
     "config": {
         "preferred-install": {
