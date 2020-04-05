@@ -28,6 +28,7 @@ jobs:
         run: vendor/bin/phpinsights
 
   deploy:
+    needs: build-and-test
     runs-on: ubuntu-latest
     name: Deploy static website
     steps:
