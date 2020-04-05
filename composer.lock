@@ -3198,10 +3198,16 @@
         {
             "name": "barth/dev-pack",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "/home/barth/Projects/dev-pack",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jibbarth/dev-pack.git",
                 "reference": "b1d63cadef3e023fb8acec3cd76f0fab27f35ff4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jibbarth/dev-pack/zipball/b1d63cadef3e023fb8acec3cd76f0fab27f35ff4",
+                "reference": "b1d63cadef3e023fb8acec3cd76f0fab27f35ff4",
+                "shasum": ""
             },
             "require": {
                 "endroid/installer": "*",
@@ -3221,6 +3227,7 @@
                 "squizlabs/php_codesniffer": "*"
             },
             "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3237,7 +3244,8 @@
                 "flex",
                 "symfony",
                 "symfony-pack"
-            ]
+            ],
+            "time": "2020-04-05T15:12:35+00:00"
         },
         {
             "name": "composer/ca-bundle",
