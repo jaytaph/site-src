@@ -8,6 +8,7 @@ parameters:
         - %currentWorkingDirectory%/tests
         - %currentWorkingDirectory%/config
         - %currentWorkingDirectory%/public
+        - %currentWorkingDirectory%/phpinsights.php
     autoload_files:
         - %currentWorkingDirectory%/vendor/autoload.php
 

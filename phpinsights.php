@@ -14,12 +14,14 @@ return [
         //  ]
     ],
     'remove' => [
-        //  ExampleInsight::class,
+        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class,
+        \PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff::class,
     ],
     'config' => [
-        //  ExampleInsight::class => [
-        //      'key' => 'value',
-        //  ],
+        \PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class => [
+            'lineLimit' => 120,
+            'absoluteLineLimit' => 160,
+        ],
     ],
     'requirements' => [
         'min-quality' => 95,
