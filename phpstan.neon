@@ -2,6 +2,10 @@ parameters:
     level: max
     paths:
         - %currentWorkingDirectory%/src/
+    ergebnis:
+        classesAllowedToBeExtended:
+            - Twig\Extension\AbstractExtension
+
     excludes_analyse:
         - %currentWorkingDirectory%/src/Kernel.php
         - %currentWorkingDirectory%/src/Migrations

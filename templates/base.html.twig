@@ -8,8 +8,16 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="flex flex-col min-h-screen">
+        <header>
+            Navigation bar
+        </header>
+        <main class="flex-grow">
+            {% block body %}{% endblock %}
+        </main>
+        <footer>
+            {{ social_link() }}
+        </footer>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
