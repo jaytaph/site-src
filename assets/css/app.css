@@ -2,6 +2,6 @@ img.emoji {
     height: 1.3rem;
     width: 1.3rem;
     margin: 0 .05em 0 .1em;
-    vertical-align: -0.1em;
+    vertical-align: text-bottom;
     display: inline-block;
 }

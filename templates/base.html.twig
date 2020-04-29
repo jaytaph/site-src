@@ -28,11 +28,11 @@
                         Jibé Barth
                     </h1>
                     <p class="text-sm text-gray-600 text-center">
-                        Web developer
+                        🇫🇷 Web developer
                         {{ social_link() }}
                     </p>
                 </div>
-                <div class="mt-4 pt-3 flex flex-wrap mx-6 border-t">
+                <div class="mt-4 pt-3 flex flex-wrap mx-6 border-t justify-center">
                     {{ interests() }}
                 </div>
             </div>
@@ -46,12 +46,12 @@
                 <div class="w-1/2 text-left">
                     © <a href="https://jibébarth.fr">Jibé Barth</a>
                 </div>
+                <div class="w-full text-center">
+                    Last generation time: {{ 'now'|format_datetime('short', 'short', locale='fr') }}
+                </div>
                 <div class="w-1/2 text-right">
                     {{ social_link() }}
                 </div>
-            </div>
-            <div class="w-full text-center">
-                Last generation time: {{ 'now'|format_datetime('short', 'short', locale='fr') }}
             </div>
         </footer>
         {% block javascripts %}
