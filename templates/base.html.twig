@@ -11,10 +11,10 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body class="flex flex-col min-h-screen">
+    <body class="flex flex-col min-h-screen bg-gray-300 font-sans">
         <header>
             {% block header %}
-            <div class="bg-gray-200 mb-12 pb-6 w-full h-auto flex flex-col items-center shadow-sm">
+            <div class="bg-gray-200 mb-6 pb-6 w-full h-auto flex flex-col items-center shadow-sm">
                 <div class="h-64 xl:h-full w-full">
                     <img class="h-full w-full object-cover" src="{{ unsplash('web-site', 1600, 300) }}">
                 </div>
@@ -41,7 +41,7 @@
         <main class="flex-grow">
             {% block body %}{% endblock %}
         </main>
-        <footer class="m-auto border-t border-gray-700 py-4 w-full max-w-5xl px-12 flex flex-col">
+        <footer class="m-auto border-t border-gray-400 py-4 w-full max-w-5xl px-12 flex flex-col text-sm text-gray-600">
             <div class="flex justify-between">
                 <div class="w-1/2 text-left">
                     © <a href="https://jibébarth.fr">Jibé Barth</a>

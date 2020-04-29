@@ -16,11 +16,15 @@ final class Project
      */
     private string $url;
 
+    private string $role;
+
     public function __construct(string $name, string $description, string $url)
     {
         $this->name = $name;
         $this->description = $description;
         $this->url = $url;
+        // TODO dynamisme
+        $this->role = 'contributor';
     }
 
     public function getName(): string
@@ -36,5 +40,10 @@ final class Project
     public function getUrl(): string
     {
         return $this->url;
+    }
+
+    public function getRole(): string
+    {
+        return $this->role;
     }
 }
