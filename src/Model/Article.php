@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Model;
 
 use App\Constant\ArticleType;
-use function Symfony\Component\String\u;
 use Symfony\Component\Validator\Constraints as Assert;
+use function Symfony\Component\String\u;
 
 final class Article
 {

@@ -26,6 +26,9 @@ final class SocialExtension extends AbstractExtension
         $this->social = $social;
     }
 
+    /**
+     * @return array<\Twig\TwigFunction>
+     */
     public function getFunctions(): array
     {
         return [

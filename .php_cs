@@ -26,7 +26,7 @@ return PhpCsFixer\Config::create()
         'native_function_invocation' => true,
         'no_superfluous_phpdoc_tags' => false,
         'ordered_class_elements' => true,
-        'ordered_imports' => true,
+        'ordered_imports' => ['imports_order' => ['const', 'class', 'function']],
         'phpdoc_align' => ['align' => 'left'],
         'phpdoc_add_missing_param_annotation' => ['only_untyped' => true],
         'phpdoc_order' => true,
