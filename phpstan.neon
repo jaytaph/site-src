@@ -5,6 +5,7 @@ parameters:
     ergebnis:
         classesAllowedToBeExtended:
             - Twig\Extension\AbstractExtension
+            - Ramsey\Collection\AbstractCollection
 
     excludes_analyse:
         - %currentWorkingDirectory%/src/Kernel.php
