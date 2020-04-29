@@ -2,30 +2,56 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Jibé barth // Portfolio{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Jibé Barth">
+        <title>{% block title %}Jibé Barth // Portfolio{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('tailwind') }}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body class="flex flex-col min-h-screen">
+    <body class="flex flex-col min-h-screen bg-gray-300 font-sans">
         <header>
-            {# TODO #}
+            {% block header %}
+            <div class="bg-gray-200 mb-6 pb-6 w-full h-auto flex flex-col items-center shadow-sm">
+                <div class="h-64 xl:h-full w-full">
+                    <img class="h-full w-full object-cover" src="{{ unsplash('web-site', 1600, 300) }}">
+                </div>
+                <div class="-ml-56 sm:w-64">
+                    <div class="shadow h-32 w-32 -my-16 border-white rounded-full overflow-hidden border-4">
+                        <img class="object-cover w-full h-full" src="https://gravatar.com/avatar/f7a23636c530faa0ceca6199226902e7?s=200">
+                    </div>
+                </div>
+                <div class="mt-16 sm:mt-4">
+                    <h1 class="text-3xl text-center font-bold">
+                        Jibé Barth
+                    </h1>
+                    <p class="text-sm text-gray-600 text-center">
+                        🇫🇷 Web developer
+                        {{ social_link() }}
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 flex flex-wrap mx-6 border-t justify-center">
+                    {{ interests() }}
+                </div>
+            </div>
+            {% endblock %}
         </header>
         <main class="flex-grow">
             {% block body %}{% endblock %}
         </main>
-        <footer class="m-auto border-t border-gray-700 py-4 w-full max-w-5xl px-12 flex flex-col">
+        <footer class="m-auto border-t border-gray-400 py-4 w-full max-w-5xl px-12 flex flex-col text-sm text-gray-600">
             <div class="flex justify-between">
                 <div class="w-1/2 text-left">
                     © <a href="https://jibébarth.fr">Jibé Barth</a>
                 </div>
+                <div class="w-full text-center">
+                    Last generation time: {{ 'now'|format_datetime('short', 'short', locale='fr') }}
+                </div>
                 <div class="w-1/2 text-right">
                     {{ social_link() }}
                 </div>
-            </div>
-            <div class="w-full text-center">
-                Last generation time: {{ 'now'|format_datetime('short', 'short', locale='fr') }}
             </div>
         </footer>
         {% block javascripts %}

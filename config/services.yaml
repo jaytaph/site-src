@@ -9,6 +9,15 @@ parameters:
             username: jibbarth
         twitter:
             username: jibbarth
+        linkedin:
+            username: 'in/jibé-b-772884a3'
+    interests:
+        - PHP
+        - Symfony
+        - Open Source
+        - Code Quality
+        - VueJS
+        - Tailwind
 
 services:
     _defaults:
@@ -16,7 +25,6 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             string $projectDir: '%kernel.project_dir%'
-            array $social: '%social%'
 
     App\:
         resource: '../src/*'
