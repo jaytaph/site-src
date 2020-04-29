@@ -18,6 +18,7 @@ parameters:
         - Code Quality
         - VueJS
         - Tailwind
+        - Docker
 
 services:
     _defaults:
