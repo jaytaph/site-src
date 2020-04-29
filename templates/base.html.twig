@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Jibé barth // Portfolio{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('tailwind') }}
             {{ encore_entry_link_tags('app') }}
@@ -10,20 +10,22 @@
     </head>
     <body class="flex flex-col min-h-screen">
         <header>
-            Navigation bar
+            {# TODO #}
         </header>
         <main class="flex-grow">
             {% block body %}{% endblock %}
         </main>
-        <footer class="m-auto border-t border-gray-700 py-4 w-full max-w-5xl px-12 flex justify-between">
-            <div class="w-1/3 text-left">
+        <footer class="m-auto border-t border-gray-700 py-4 w-full max-w-5xl px-12 flex flex-col">
+            <div class="flex justify-between">
+                <div class="w-1/2 text-left">
+                    © <a href="https://jibébarth.fr">Jibé Barth</a>
+                </div>
+                <div class="w-1/2 text-right">
+                    {{ social_link() }}
+                </div>
+            </div>
+            <div class="w-full text-center">
                 Last generation time: {{ 'now'|format_datetime('short', 'short', locale='fr') }}
-            </div>
-            <div class="w-1/3 text-center">
-                © <a href="https://jibébarth.fr">Jibé Barth</a>
-            </div>
-            <div class="w-1/3 text-right">
-                {{ social_link() }}
             </div>
         </footer>
         {% block javascripts %}
