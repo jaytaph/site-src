@@ -1,5 +1,7 @@
 module.exports = {
     theme: {},
-    variants: {},
+    variants: {
+        fontSize: ['responsive', 'hover', 'focus'],
+    },
     plugins: [],
 }

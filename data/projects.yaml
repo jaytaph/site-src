@@ -1,0 +1,12 @@
+-
+    name: PHP Insights
+    description: Instant PHP quality checks from your console
+    url: https://phpinsights.com
+-
+    name: dev-pack
+    description: \"Symfony Pack\" that embed all my main dev tools to assert a great quality code
+    url: https://github.com/Jibbarth/dev-pack
+-
+    name: SimpleConfigBundle
+    description: Expose your bundles configuration in a Web UI view.
+    url: https://github.com/Jibbarth/SimpleConfigBundle

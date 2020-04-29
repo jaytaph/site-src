@@ -2,13 +2,21 @@ parameters:
     level: max
     paths:
         - %currentWorkingDirectory%/src/
+    ergebnis:
+        classesAllowedToBeExtended:
+            - Twig\Extension\AbstractExtension
+            - Ramsey\Collection\AbstractCollection
+
     excludes_analyse:
         - %currentWorkingDirectory%/src/Kernel.php
         - %currentWorkingDirectory%/src/Migrations
         - %currentWorkingDirectory%/tests
         - %currentWorkingDirectory%/config
         - %currentWorkingDirectory%/public
+        - %currentWorkingDirectory%/phpinsights.php
     autoload_files:
         - %currentWorkingDirectory%/vendor/autoload.php
 
     ignoreErrors:
+        - "#^Method App\\\\Model\\\\.* has a nullable return type declaration\\.$#" # Authorize nullable return type for App\Model
+        - "#^Method App\\\\Model\\\\.* has parameter .* with a nullable type declaration\\.$#" # Authorize nullable return type for App\Model

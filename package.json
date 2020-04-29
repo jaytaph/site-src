@@ -12,6 +12,7 @@
     "webpack-notifier": "^1.6.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "@symfony/webpack-encore": "^0.28.3",
     "tailwind": "^4.0.0",
     "tailwindcss": "^1.2.0"

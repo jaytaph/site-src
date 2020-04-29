@@ -1,0 +1,3 @@
+{% for type, value in data %}
+    <a href="https://{{ type }}.com/{{ value.username }}" target="_blank" rel="nofollow,noopener"><i class="fab fa-{{ type }} text-gray-600 hover:text-black"></i></a>
+{% endfor %}

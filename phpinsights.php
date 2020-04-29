@@ -9,17 +9,23 @@ return [
         'src/Kernel.php',
     ],
     'add' => [
-        //  ExampleMetric::class => [
-        //      ExampleInsight::class,
-        //  ]
+        \NunoMaduro\PhpInsights\Domain\Metrics\Code\Code::class => [
+            \SlevomatCodingStandard\Sniffs\ControlStructures\RequireYodaComparisonSniff::class,
+        ],
     ],
     'remove' => [
-        //  ExampleInsight::class,
+        \SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class,
+        \PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff::class,
+        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class,
     ],
     'config' => [
-        //  ExampleInsight::class => [
-        //      'key' => 'value',
-        //  ],
+        \PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class => [
+            'lineLimit' => 120,
+            'absoluteLineLimit' => 160,
+        ],
+        \PhpCsFixer\Fixer\Import\OrderedImportsFixer::class => [
+            'imports_order' => ['const', 'class', 'function'],
+        ],
     ],
     'requirements' => [
         'min-quality' => 95,

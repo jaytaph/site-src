@@ -40,4 +40,5 @@ parameters:
       configuration: phpstan.neon
     securitychecker: ~
     xmllint: ~
-    yamllint: ~
+    yamllint:
+      parse_custom_tags: true
