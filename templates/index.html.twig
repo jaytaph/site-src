@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
 <style>
@@ -10,10 +10,25 @@
 
 <div class="example-wrapper">
     <h1>🚧 jibbarth.github.io 🚧</h1>
-
     <ul>
         {% for project in projects %}
-        <li><a href="{{ project.url }}">{{ project.name }}</a></li>
+            <li>
+                <a href="{{ project.url }}">{{ project.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p>Writing</p>
+    <ul>
+        {% for article in articles %}
+            {#{% set url = path('article_detail', {slug: 'article.slug'}) %}#}
+            {% set url = '#' %}
+            {% if article.content is null and article.url is not null %}
+                {% set url = article.url %}
+            {% endif %}
+            <li>
+                <a href="{{ url }}">{{ article.date|format_date('short', locale='fr') }} - {{ article.title }}</a>
+            </li>
         {% endfor %}
     </ul>
 </div>
