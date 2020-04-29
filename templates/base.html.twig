@@ -15,11 +15,16 @@
         <main class="flex-grow">
             {% block body %}{% endblock %}
         </main>
-        <footer>
-            Last generation time: {{ 'now'|format_datetime() }}
-            {{ social_link() }}
+        <footer class="m-auto border-t border-gray-700 py-4 w-full max-w-4xl px-12 flex justify-between">
+            <div>
+                Last generation time: {{ 'now'|format_datetime() }}
+            </div>
+            <div>
+                {{ social_link() }}
+            </div>
         </footer>
         {% block javascripts %}
+            <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" rel="prefetch" crossorigin="anonymous"></script>
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </body>
