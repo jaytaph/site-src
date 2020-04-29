@@ -16,6 +16,7 @@
             {% block body %}{% endblock %}
         </main>
         <footer>
+            Last generation time: {{ 'now'|format_datetime() }}
             {{ social_link() }}
         </footer>
         {% block javascripts %}

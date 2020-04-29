@@ -161,6 +161,9 @@
     "symfony/inflector": {
         "version": "v5.0.7"
     },
+    "symfony/intl": {
+        "version": "v5.0.8"
+    },
     "symfony/maker-bundle": {
         "version": "1.0",
         "recipe": {
@@ -174,6 +177,9 @@
         "version": "v5.0.7"
     },
     "symfony/polyfill-intl-grapheme": {
+        "version": "v1.15.0"
+    },
+    "symfony/polyfill-intl-icu": {
         "version": "v1.15.0"
     },
     "symfony/polyfill-intl-idn": {
@@ -298,6 +304,12 @@
     },
     "thecodingmachine/safe": {
         "version": "v1.1"
+    },
+    "twig/extra-bundle": {
+        "version": "v3.0.3"
+    },
+    "twig/intl-extra": {
+        "version": "v3.0.3"
     },
     "twig/twig": {
         "version": "v3.0.3"
