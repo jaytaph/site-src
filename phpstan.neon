@@ -17,3 +17,5 @@ parameters:
         - %currentWorkingDirectory%/vendor/autoload.php
 
     ignoreErrors:
+        - "#^Method App\\\\Model\\\\.* has a nullable return type declaration\\.$#" # Authorize nullable return type for App\Model
+        - "#^Method App\\\\Model\\\\.* has parameter .* with a nullable type declaration\\.$#" # Authorize nullable return type for App\Model
