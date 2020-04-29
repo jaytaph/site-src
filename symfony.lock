@@ -35,20 +35,8 @@
     "erusev/parsedown-extra": {
         "version": "0.8.1"
     },
-    "nette/application": {
-        "version": "v3.0.4"
-    },
-    "nette/component-model": {
-        "version": "v3.0.0"
-    },
     "nette/finder": {
         "version": "v2.5.2"
-    },
-    "nette/http": {
-        "version": "v3.0.4"
-    },
-    "nette/routing": {
-        "version": "v3.0.0"
     },
     "nette/utils": {
         "version": "v3.1.1"
