@@ -20,14 +20,13 @@
                                 {{ project.description }}
                             </div>
                             <div class="mt-4 text-center">
-                                {% set color = 'red' %}
+                                {% set classes = 'text-red-600 border-red-600 hover:bg-red-600' %}
                                 {% if project.role == 'contributor' %}
-                                    {% set color = 'green' %}
+                                    {% set classes = 'text-green-600 border-green-600 hover:bg-green-600' %}
                                 {% endif %}
                                 <p class="inline-block
                                     text-xs mr-2 my-1 uppercase tracking-wider border px-2
-                                     text-{{ color }}-600 border-{{ color }}-600
-                                     hover:bg-{{ color }}-600 hover:text-gray-100 cursor-default">
+                                     {{ classes }} hover:text-gray-100 cursor-default">
                                     {{ project.role }}
                                 </p>
                             </div>
