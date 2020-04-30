@@ -26,7 +26,11 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             string $projectDir: '%kernel.project_dir%'
+            iterable $gifProviders: !tagged_iterator app.gif_provider
 
+    _instanceof:
+        App\Gif\GifLinkProviderInterface:
+            tags: ['app.gif_provider']
     App\:
         resource: '../src/*'
         exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

@@ -16,7 +16,9 @@
             {% block header %}
             <div class="bg-gray-200 mb-6 pb-6 w-full h-auto flex flex-col items-center shadow-sm">
                 <div class="h-64 xl:h-full w-full">
+                    {% block header_image %}
                     <img class="h-full w-full object-cover" src="{{ unsplash('web-site', 1600, 300) }}">
+                    {% endblock %}
                 </div>
                 <div class="-ml-56 sm:w-64">
                     <div class="shadow h-32 w-32 -my-16 border-white rounded-full overflow-hidden border-4">
@@ -33,7 +35,9 @@
                     </p>
                 </div>
                 <div class="mt-4 pt-3 flex flex-wrap mx-6 border-t justify-center">
-                    {{ interests() }}
+                    {% block sub_profile %}
+                        {{ interests() }}
+                    {% endblock %}
                 </div>
             </div>
             {% endblock %}

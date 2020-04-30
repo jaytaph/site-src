@@ -39,7 +39,8 @@
     },
     "require-dev": {
         "barth/dev-pack": "dev-master",
-        "symfony/maker-bundle": "^1.14"
+        "symfony/maker-bundle": "^1.14",
+        "symfony/profiler-pack": "^1.0"
     },
     "config": {
         "preferred-install": {
