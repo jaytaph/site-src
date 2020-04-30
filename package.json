@@ -6,6 +6,7 @@
   "author": "Jibé Barth <barth.jib@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.2",
     "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.0.1",
