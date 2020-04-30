@@ -1,0 +1,26 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Gif;
+
+use Symfony\Contracts\HttpClient\HttpClientInterface;
+
+final class TenorGifLinkProvider implements GifLinkProviderInterface
+{
+    private const RANDOM_URL = 'http://api.tenor.com/v1/random?key=LIVDSRZULELA&limit=1&q=';
+
+    private HttpClientInterface $client;
+
+    public function __construct(HttpClientInterface $client)
+    {
+        $this->client = $client;
+    }
+
+    public function getRandom(string $search): string
+    {
+        $response = $this->client->request('GET', self::RANDOM_URL . $search);
+
+        return $response->toArray()['results'][0]['media'][0]['gif']['url'];
+    }
+}
