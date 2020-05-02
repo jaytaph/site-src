@@ -8,21 +8,40 @@ use App\Collection\ArticleCollection;
 use App\Model\Article;
 use App\Repository\ArticleRepositoryInterface;
 use Github\Client;
+use Symfony\Contracts\Cache\CacheInterface;
+use Symfony\Contracts\Cache\ItemInterface;
 
 final class PublicGistArticleRepository implements ArticleRepositoryInterface
 {
     private Client $client;
 
-    public function __construct(Client $client)
-    {
+    private CacheInterface $cache;
+
+    public function __construct(
+        Client $client,
+        CacheInterface $cache
+    ) {
         $this->client = $client;
+        $this->cache = $cache;
     }
 
     public function getAll(): ArticleCollection
     {
-        $gists = $this->client->user()->gists('jibbarth');
+        $gists = $this->cache->get('gist_list', function (ItemInterface $item): array {
+            $item->expiresAfter(3600);
+
+            return $this->client->user()->gists('jibbarth');
+        });
+
         $articles = \array_map(function (array $githubData): Article {
-            $gist = $this->client->gist()->show($githubData['id']);
+            $gist = $this->cache->get(
+                'gist_' . $githubData['id'],
+                function (ItemInterface $item) use ($githubData): array {
+                    $item->expiresAfter(3600);
+
+                    return $this->client->gist()->show($githubData['id']);
+                }
+            );
             $file = \array_shift($gist['files']);
 
             return new Article(
