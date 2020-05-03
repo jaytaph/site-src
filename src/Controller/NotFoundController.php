@@ -6,7 +6,6 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface;
 use Twig\Environment;
 
 /**
@@ -17,12 +16,9 @@ final class NotFoundController
 {
     private Environment $renderer;
 
-    private EntrypointLookupInterface $entrypointLookup;
-
-    public function __construct(Environment $renderer, EntrypointLookupInterface $entrypointLookup)
+    public function __construct(Environment $renderer)
     {
         $this->renderer = $renderer;
-        $this->entrypointLookup = $entrypointLookup;
     }
 
     /**
@@ -30,8 +26,6 @@ final class NotFoundController
      */
     public function __invoke(): Response
     {
-        $this->entrypointLookup->reset();
-
         return new Response($this->renderer->render('404.html.twig'));
     }
 }

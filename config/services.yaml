@@ -1,8 +1,5 @@
 # This file is the entry point to configure your own services.
 # Files in the packages/ subdirectory configure your dependencies.
-imports:
-    - { resource: '../vendor/symplify/symfony-static-dumper/config/config.yaml' }
-
 parameters:
     social:
         github:
@@ -47,3 +44,8 @@ services:
         arguments:
             - !tagged_iterator app.article_repository
     App\Repository\ArticleRepositoryInterface: '@App\Repository\ChainArticleRepository'
+
+    App\Asset\ResetEntrypointLookup:
+        decorates: 'webpack_encore.entrypoint_lookup[_default]'
+        arguments:
+            $decorated: '@App\Asset\ResetEntrypointLookup.inner'
