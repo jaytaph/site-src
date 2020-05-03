@@ -36,7 +36,8 @@
         "symplify/symfony-static-dumper": "^7.2",
         "thecodingmachine/safe": "^1.1",
         "twig/extra-bundle": "^3.0",
-        "twig/intl-extra": "^3.0"
+        "twig/intl-extra": "^3.0",
+        "twig/markdown-extra": "^3.0"
     },
     "require-dev": {
         "barth/dev-pack": "dev-master",
