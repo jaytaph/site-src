@@ -16,15 +16,15 @@ final class PrivateGistArticleRepository implements ArticleRepositoryInterface
 
     private ArticleFromGistLoader $gistArticleLoader;
 
-    private Yaml $yaml;
-
     private string $projectDir;
 
-    public function __construct(ArticleFromGistLoader $gistArticleLoader, Yaml $yaml, string $projectDir)
+    private Yaml $yaml;
+
+    public function __construct(ArticleFromGistLoader $gistArticleLoader, string $projectDir)
     {
         $this->projectDir = $projectDir;
         $this->gistArticleLoader = $gistArticleLoader;
-        $this->yaml = $yaml;
+        $this->yaml = new Yaml();
     }
 
     public function getById(string $id): Article
