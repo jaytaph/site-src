@@ -329,6 +329,12 @@
             "src/Kernel.php"
         ]
     },
+    "symfony/http-client": {
+        "version": "v5.0.8"
+    },
+    "symfony/http-client-contracts": {
+        "version": "v2.0.1"
+    },
     "symfony/http-foundation": {
         "version": "v5.0.7"
     },
@@ -352,6 +358,9 @@
     },
     "symfony/mime": {
         "version": "v5.0.7"
+    },
+    "symfony/options-resolver": {
+        "version": "v5.0.8"
     },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.15.0"
@@ -512,6 +521,9 @@
         "version": "v3.0.3"
     },
     "twig/intl-extra": {
+        "version": "v3.0.3"
+    },
+    "twig/markdown-extra": {
         "version": "v3.0.3"
     },
     "twig/twig": {

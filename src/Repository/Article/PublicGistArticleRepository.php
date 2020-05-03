@@ -45,6 +45,7 @@ final class PublicGistArticleRepository implements ArticleRepositoryInterface
             $file = \array_shift($gist['files']);
 
             return new Article(
+                $gist['id'],
                 $gist['description'],
                 $file['content'],
                 new \DateTime($gist['created_at']),
@@ -61,5 +62,28 @@ final class PublicGistArticleRepository implements ArticleRepositoryInterface
         }));
 
         return new ArticleCollection($articles);
+    }
+
+    public function getById(string $id): Article
+    {
+        $gist = $this->cache->get(
+            'gist_' . $id,
+            function (ItemInterface $item) use ($id): array {
+                $item->expiresAfter(3600);
+
+                return $this->client->gist()->show($id);
+            }
+        );
+
+        $file = \array_shift($gist['files']);
+        $article = new Article(
+            $gist['id'],
+            $gist['description'],
+            $file['content'],
+            new \DateTime($gist['created_at']),
+            $gist['html_url']
+        );
+
+        return $article->withFiles($gist['files']);
     }
 }

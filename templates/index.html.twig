@@ -43,12 +43,17 @@
         <ul>
             {% for article in articles %}
                 {#{% set url = path('article_detail', {slug: 'article.slug'}) %}#}
-                {% set url = '#' %}
-                {% if  article.url is not null %}
+                {% set url = path('article_detail', {type: article.type, article: article.id}) %}
+                {% if article.type == constant('App\\Constant\\ArticleType::EXTERNAL') %}
                     {% set url = article.url %}
                 {% endif %}
                 <li>
-                    <a href="{{ url }}">{{ article.date|format_date('short', locale='fr') }} - {{ article.title }}</a>
+                    <a href="{{ url }}">
+                        {% if article.type == constant('App\\Constant\\ArticleType::EXTERNAL') %}
+                            <i class="fa fa-external-link-alt"></i>
+                        {% endif %}
+                        {{ article.date|format_date('short', locale='fr') }} - {{ article.title }}
+                    </a>
                 </li>
             {% endfor %}
         </ul>

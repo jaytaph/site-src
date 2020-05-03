@@ -10,11 +10,14 @@ use function Symfony\Component\String\u;
 
 final class Article
 {
+    private string $id;
+
     private string $title;
 
     private ?string $content;
 
     private \DateTimeInterface $date;
+
     /**
      * @Assert\Url()
      */
@@ -22,8 +25,14 @@ final class Article
 
     private string $type;
 
-    public function __construct(string $title, ?string $content, \DateTimeInterface $date, ?string $url)
+    /**
+     * @var array<string, array<string,string>>
+     */
+    private array $files = [];
+
+    public function __construct(string $id, string $title, ?string $content, \DateTimeInterface $date, ?string $url)
     {
+        $this->id = $id;
         $this->title = $title;
         $this->content = $content;
         $this->url = $url;
@@ -36,6 +45,11 @@ final class Article
         if (null !== u($url ?? '')->indexOf('gist.github.com')) {
             $this->type = ArticleType::GIST;
         }
+    }
+
+    public function getId(): string
+    {
+        return $this->id;
     }
 
     public function getTitle(): string
@@ -66,5 +80,23 @@ final class Article
     public function getAbstract(): string
     {
         return u($this->content ?? '')->truncate(200, '...')->toString();
+    }
+
+    /**
+     * @return array<string, array<string,string>>
+     */
+    public function getFiles(): array
+    {
+        return $this->files;
+    }
+
+    /**
+     * @param array<string, array<string,string>> $files
+     */
+    public function withFiles(array $files): self
+    {
+        $this->files = $files;
+
+        return $this;
     }
 }
