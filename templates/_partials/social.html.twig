@@ -1,6 +1,6 @@
 {% for type, value in data %}
     <a
-        href="https://{{ type }}.com/{{ value.username }}"
+        href="https://{{ value.prefix ?? '' }}{{ type }}.com/{{ value.username }}"
         title="{{ type|capitalize }}"
         target="_blank"
         rel="nofollow,noopener">

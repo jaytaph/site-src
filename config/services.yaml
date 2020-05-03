@@ -12,6 +12,9 @@ parameters:
             username: jibbarth
         linkedin:
             username: 'in/jibé-b-772884a3'
+        symfony:
+            username: 'profile/jibbarth'
+            prefix: 'connect.'
     interests:
         - PHP
         - Symfony
