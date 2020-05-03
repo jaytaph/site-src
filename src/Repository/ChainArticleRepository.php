@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Repository;
 
 use App\Collection\ArticleCollection;
+use App\Model\Article;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 final class ChainArticleRepository implements ArticleRepositoryInterface
 {
@@ -40,5 +42,18 @@ final class ChainArticleRepository implements ArticleRepositoryInterface
         \assert($articles instanceof ArticleCollection);
 
         return $articles;
+    }
+
+    public function getById(string $id): Article
+    {
+        foreach ($this->repositories as $repository) {
+            try {
+                return $repository->getById($id);
+            } catch (NotFoundHttpException $exception) {
+                continue;
+            }
+        }
+
+        throw new NotFoundHttpException('Unable to find article with id' . $id);
     }
 }
