@@ -50,12 +50,6 @@
     "ergebnis/phpstan-rules": {
         "version": "0.14.4"
     },
-    "erusev/parsedown": {
-        "version": "1.7.4"
-    },
-    "erusev/parsedown-extra": {
-        "version": "0.8.1"
-    },
     "friendsofphp/php-cs-fixer": {
         "version": "2.2",
         "recipe": {
@@ -85,6 +79,9 @@
         "files": [
             "config/packages/github_api.yaml"
         ]
+    },
+    "league/commonmark": {
+        "version": "1.4.2"
     },
     "league/container": {
         "version": "3.3.0"

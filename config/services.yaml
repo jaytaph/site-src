@@ -55,3 +55,6 @@ services:
         decorates: 'webpack_encore.entrypoint_lookup[_default]'
         arguments:
             $decorated: '@App\Asset\ResetEntrypointLookup.inner'
+
+    # replace default markdown by our markdown configured
+    twig.markdown.default: '@App\Twig\Extra\Markdown'
