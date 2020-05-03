@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Repository\Article;
 
 use App\Collection\ArticleCollection;
+use App\Gist\ArticleFromGistLoader;
 use App\Model\Article;
 use App\Repository\ArticleRepositoryInterface;
 use Github\Client;
@@ -17,15 +18,19 @@ final class PublicGistArticleRepository implements ArticleRepositoryInterface
 
     private CacheInterface $cache;
 
+    private ArticleFromGistLoader $gistArticleLoader;
+
     private string $githubUser;
 
     public function __construct(
         Client $client,
         CacheInterface $cache,
+        ArticleFromGistLoader $gistArticleLoader,
         string $githubUser
     ) {
         $this->client = $client;
         $this->cache = $cache;
+        $this->gistArticleLoader = $gistArticleLoader;
         $this->githubUser = $githubUser;
     }
 
@@ -38,23 +43,7 @@ final class PublicGistArticleRepository implements ArticleRepositoryInterface
         });
 
         $articles = \array_map(function (array $githubData): Article {
-            $gist = $this->cache->get(
-                'gist_' . $githubData['id'],
-                function (ItemInterface $item) use ($githubData): array {
-                    $item->expiresAfter(3600);
-
-                    return $this->client->gist()->show($githubData['id']);
-                }
-            );
-            $file = \array_shift($gist['files']);
-
-            return new Article(
-                $gist['id'],
-                $gist['description'],
-                $file['content'],
-                new \DateTime($gist['created_at']),
-                $gist['html_url']
-            );
+            return $this->gistArticleLoader->retrieve($githubData['id']);
         }, \array_filter($gists, static function (array $githubData): bool {
             if (0 === \count($githubData['files'])) {
                 return false;
@@ -70,24 +59,6 @@ final class PublicGistArticleRepository implements ArticleRepositoryInterface
 
     public function getById(string $id): Article
     {
-        $gist = $this->cache->get(
-            'gist_' . $id,
-            function (ItemInterface $item) use ($id): array {
-                $item->expiresAfter(3600);
-
-                return $this->client->gist()->show($id);
-            }
-        );
-
-        $file = \array_shift($gist['files']);
-        $article = new Article(
-            $gist['id'],
-            $gist['description'],
-            $file['content'],
-            new \DateTime($gist['created_at']),
-            $gist['html_url']
-        );
-
-        return $article->withFiles($gist['files']);
+        return $this->gistArticleLoader->retrieve($id);
     }
 }
