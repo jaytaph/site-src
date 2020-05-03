@@ -31,7 +31,9 @@
                     </h1>
                     <p class="text-sm text-gray-600 text-center">
                         🇫🇷 Web developer
+                        <div class="text-center">
                         {{ social_link() }}
+                        </div>
                     </p>
                 </div>
                 <div class="mt-4 pt-3 flex flex-wrap mx-6 border-t justify-center">
@@ -51,7 +53,7 @@
                     © <a href="https://jibébarth.fr">Jibé Barth</a>
                 </div>
                 <div class="w-full sm:text-center">
-                    Last generation time: {{ 'now'|format_datetime('short', 'short', locale='fr') }}
+                    Last generation time: {{ 'now'|format_datetime() }}
                 </div>
                 <div class="sm:w-1/2 sm:text-right">
                     {{ social_link() }}
