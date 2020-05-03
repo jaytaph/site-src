@@ -17,12 +17,16 @@ final class PublicGistArticleRepository implements ArticleRepositoryInterface
 
     private CacheInterface $cache;
 
+    private string $githubUser;
+
     public function __construct(
         Client $client,
-        CacheInterface $cache
+        CacheInterface $cache,
+        string $githubUser
     ) {
         $this->client = $client;
         $this->cache = $cache;
+        $this->githubUser = $githubUser;
     }
 
     public function getAll(): ArticleCollection
@@ -30,7 +34,7 @@ final class PublicGistArticleRepository implements ArticleRepositoryInterface
         $gists = $this->cache->get('gist_list', function (ItemInterface $item): array {
             $item->expiresAfter(3600);
 
-            return $this->client->user()->gists('jibbarth');
+            return $this->client->user()->gists($this->githubUser);
         });
 
         $articles = \array_map(function (array $githubData): Article {

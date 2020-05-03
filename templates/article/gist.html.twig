@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ article.title }} // Jibé Barth{% endblock %}
+{% block title %}{{ article.title }} // {{ author }}{% endblock %}
 {% block header_image %}
     <img class="h-full w-full object-cover" src="{{ unsplash('programming', 1600, 300) }}">
 {% endblock %}
@@ -24,7 +24,7 @@
                             {{ file.content | markdown_to_html }}
                         </div>
                     {% else %}
-                        <script src="https://gist.github.com/Jibbarth/{{ article.id }}.js?file={{ file.filename }}"></script>
+                        <script src="https://gist.github.com/{{ github_user }}/{{ article.id }}.js?file={{ file.filename }}"></script>
                     {% endif %}
                 </div>
             {% endfor %}

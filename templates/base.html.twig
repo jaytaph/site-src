@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="author" content="Jibé Barth">
-        <title>{% block title %}Jibé Barth // Portfolio{% endblock %}</title>
+        <meta name="author" content="{{ author}}">
+        <title>{% block title %}{{ author }} // Portfolio{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('tailwind') }}
             {{ encore_entry_link_tags('app') }}
@@ -22,12 +22,14 @@
                 </div>
                 <div class="-ml-56 sm:w-64">
                     <div class="shadow h-32 w-32 -my-16 border-white rounded-full overflow-hidden border-4">
-                        <img class="object-cover w-full h-full" src="https://gravatar.com/avatar/f7a23636c530faa0ceca6199226902e7?s=200">
+                        <a href="{{ website_url }}">
+                            <img class="object-cover w-full h-full" src="https://gravatar.com/avatar/{{ gravatar_hash }}?s=200">
+                        </a>
                     </div>
                 </div>
                 <div class="mt-16 sm:mt-4">
                     <h1 class="text-3xl text-center font-bold">
-                        Jibé Barth
+                        {{ author }}
                     </h1>
                     <p class="text-sm text-gray-600 text-center">
                         🇫🇷 Web developer
@@ -50,10 +52,10 @@
         <footer class="m-auto border-t border-gray-400 py-4 w-full max-w-5xl px-2 md:px-12 md:text-sm text-gray-600">
             <div class="sm:flex justify-between text-center">
                 <div class="sm:w-1/2 sm:text-left">
-                    © <a href="https://jibébarth.fr">Jibé Barth</a>
+                    © <a href="{{ website_url }}">{{ author }}</a>
                 </div>
                 <div class="w-full sm:text-center">
-                    Last generation time: {{ 'now'|format_datetime() }}
+                    Last generation: {{ 'now'|format_datetime() }}
                 </div>
                 <div class="sm:w-1/2 sm:text-right">
                     {{ social_link() }}
