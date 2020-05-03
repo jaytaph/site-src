@@ -27,6 +27,9 @@
 .markdown a {
   @apply text-blue-600 font-semibold;
 }
+.markdown a svg {
+    @apply inline;
+}
 
 .markdown strong a {
   @apply font-bold;
