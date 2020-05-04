@@ -8,4 +8,5 @@ final class Role
 {
     public const AUTHOR = 'author';
     public const CONTRIBUTOR = 'contributor';
+    public const MAINTENER = 'maintener';
 }

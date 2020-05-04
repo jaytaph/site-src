@@ -24,6 +24,9 @@
                                 {% if project.role == 'contributor' %}
                                     {% set classes = 'text-green-600 border-green-600 hover:bg-green-600' %}
                                 {% endif %}
+                                {% if project.role == 'maintener' %}
+                                    {% set classes = 'text-blue-600 border-blue-600 hover:bg-blue-600' %}
+                                {% endif %}
                                 <p class="inline-block
                                     text-xs mr-2 my-1 uppercase tracking-wider border px-2
                                      {{ classes }} hover:text-gray-100 cursor-default">
