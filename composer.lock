@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91f0b656e2a87c22f2fe59f5ab2026ec",
+    "content-hash": "beca8d7854ce458cfded029ee6229bed",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -4412,89 +4412,24 @@
             "time": "2020-04-28T17:58:55+00:00"
         },
         {
-            "name": "symplify/autodiscovery",
-            "version": "v7.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symplify/autodiscovery.git",
-                "reference": "2e9b1aa2f41873dbe76f2847e99195126be5662b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symplify/autodiscovery/zipball/2e9b1aa2f41873dbe76f2847e99195126be5662b",
-                "reference": "2e9b1aa2f41873dbe76f2847e99195126be5662b",
-                "shasum": ""
-            },
-            "require": {
-                "nette/utils": "^3.0",
-                "php": "^7.2",
-                "symfony/console": "^4.4|^5.0",
-                "symfony/dependency-injection": "^4.4|^5.0",
-                "symfony/finder": "^4.4|^5.0",
-                "symfony/routing": "^4.4|^5.0",
-                "symplify/autowire-array-parameter": "^7.3.4",
-                "symplify/package-builder": "^7.3.4",
-                "symplify/smart-file-system": "^7.3.4"
-            },
-            "require-dev": {
-                "doctrine/cache": "^1.10",
-                "doctrine/doctrine-bundle": "^2.0",
-                "doctrine/doctrine-cache-bundle": "^1.4",
-                "doctrine/orm": "^2.7",
-                "doctrine/persistence": "^1.3.3",
-                "phpunit/phpunit": "^8.5|^9.0",
-                "symfony/framework-bundle": "^4.4|^5.0",
-                "symfony/http-kernel": "^4.4|^5.0",
-                "symfony/templating": "^4.4|^5.0",
-                "symfony/translation": "^4.4|^5.0",
-                "symfony/twig-bundle": "^4.4|^5.0"
-            },
-            "bin": [
-                "bin/autodiscovery"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "7.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symplify\\Autodiscovery\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Forget manual registration of Doctrine entities, Twig templates and routes. Let autodiscovery handle that for you.",
-            "funding": [
-                {
-                    "url": "https://github.com/tomasvotruba",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-05-02T21:07:42+00:00"
-        },
-        {
             "name": "symplify/autowire-array-parameter",
-            "version": "v7.3.4",
+            "version": "v7.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/autowire-array-parameter.git",
-                "reference": "0f8107a38cc214135b2fa4ea45e43ce26100c9ac"
+                "reference": "3a3bf84a52fded11fccfe8b97e90fb8570ed02dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/autowire-array-parameter/zipball/0f8107a38cc214135b2fa4ea45e43ce26100c9ac",
-                "reference": "0f8107a38cc214135b2fa4ea45e43ce26100c9ac",
+                "url": "https://api.github.com/repos/symplify/autowire-array-parameter/zipball/3a3bf84a52fded11fccfe8b97e90fb8570ed02dc",
+                "reference": "3a3bf84a52fded11fccfe8b97e90fb8570ed02dc",
                 "shasum": ""
             },
             "require": {
                 "nette/utils": "^3.0",
                 "php": "^7.2",
                 "symfony/dependency-injection": "^4.4|^5.0",
-                "symplify/package-builder": "^7.3.4"
+                "symplify/package-builder": "^7.3.8"
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.5|^9.0"
@@ -4521,69 +4456,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-02T21:07:42+00:00"
-        },
-        {
-            "name": "symplify/flex-loader",
-            "version": "v7.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symplify/flex-loader.git",
-                "reference": "8bdd17acb6148c91094632ab98bb96f5deb15357"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symplify/flex-loader/zipball/8bdd17acb6148c91094632ab98bb96f5deb15357",
-                "reference": "8bdd17acb6148c91094632ab98bb96f5deb15357",
-                "shasum": ""
-            },
-            "require": {
-                "nette/utils": "^3.0",
-                "php": "^7.2",
-                "symfony/dependency-injection": "^4.4|^5.0",
-                "symfony/routing": "^4.4|^5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.5|^9.0",
-                "symfony/framework-bundle": "^4.4|^5.0",
-                "symplify/package-builder": "^7.3.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "7.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symplify\\FlexLoader\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Reduce Kernel Flex boiler code and use extra features",
-            "funding": [
-                {
-                    "url": "https://github.com/tomasvotruba",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-05-02T21:07:42+00:00"
+            "time": "2020-05-04T10:14:41+00:00"
         },
         {
             "name": "symplify/package-builder",
-            "version": "v7.3.4",
+            "version": "v7.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/package-builder.git",
-                "reference": "675cc1db37d02a7d50ed06506ace97f0d4aa24f4"
+                "reference": "c6977b5531ed24e5fd3da3bd68e9b985eba1866e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/package-builder/zipball/675cc1db37d02a7d50ed06506ace97f0d4aa24f4",
-                "reference": "675cc1db37d02a7d50ed06506ace97f0d4aa24f4",
+                "url": "https://api.github.com/repos/symplify/package-builder/zipball/c6977b5531ed24e5fd3da3bd68e9b985eba1866e",
+                "reference": "c6977b5531ed24e5fd3da3bd68e9b985eba1866e",
                 "shasum": ""
             },
             "require": {
@@ -4622,20 +4508,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-02T15:03:34+00:00"
+            "time": "2020-05-04T10:14:30+00:00"
         },
         {
             "name": "symplify/smart-file-system",
-            "version": "v7.3.4",
+            "version": "v7.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/smart-file-system.git",
-                "reference": "7e562c6671566d3d5ab22d1d8c44adee2af83ff8"
+                "reference": "0e91ecda90c9071d997f9877e1aee17f692c0a1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/smart-file-system/zipball/7e562c6671566d3d5ab22d1d8c44adee2af83ff8",
-                "reference": "7e562c6671566d3d5ab22d1d8c44adee2af83ff8",
+                "url": "https://api.github.com/repos/symplify/smart-file-system/zipball/0e91ecda90c9071d997f9877e1aee17f692c0a1b",
+                "reference": "0e91ecda90c9071d997f9877e1aee17f692c0a1b",
                 "shasum": ""
             },
             "require": {
@@ -4671,20 +4557,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-01T22:34:00+00:00"
+            "time": "2020-05-02T01:43:28+00:00"
         },
         {
             "name": "symplify/symfony-static-dumper",
-            "version": "v7.3.4",
+            "version": "v7.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/symfony-static-dumper.git",
-                "reference": "97e0eedc3200afde671028b1e17dfeec7fede956"
+                "reference": "63d34a3c301420ffcc6f6f51de103b864bcc7521"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/symfony-static-dumper/zipball/97e0eedc3200afde671028b1e17dfeec7fede956",
-                "reference": "97e0eedc3200afde671028b1e17dfeec7fede956",
+                "url": "https://api.github.com/repos/symplify/symfony-static-dumper/zipball/63d34a3c301420ffcc6f6f51de103b864bcc7521",
+                "reference": "63d34a3c301420ffcc6f6f51de103b864bcc7521",
                 "shasum": ""
             },
             "require": {
@@ -4697,17 +4583,17 @@
                 "symfony/http-foundation": "^4.4|^5.0",
                 "symfony/http-kernel": "^4.4|^5.0",
                 "symfony/routing": "^4.4|^5.0",
-                "symplify/autowire-array-parameter": "^7.3.4",
-                "symplify/package-builder": "^7.3.4",
-                "symplify/smart-file-system": "^7.3.4"
+                "symplify/autowire-array-parameter": "^7.3.8",
+                "symplify/package-builder": "^7.3.8",
+                "symplify/smart-file-system": "^7.3.8"
             },
             "require-dev": {
                 "phpstan/phpstan": "^0.12.10",
                 "phpunit/phpunit": "^8.5|^9.0",
                 "symfony/framework-bundle": "^4.4|^5.0",
                 "symfony/twig-bundle": "^4.4|^5.0",
-                "symplify/autodiscovery": "^7.3.4",
-                "symplify/flex-loader": "^7.3.4"
+                "symplify/autodiscovery": "^7.3.8",
+                "symplify/flex-loader": "^7.3.8"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4725,20 +4611,20 @@
                 "MIT"
             ],
             "description": "Dump Symfony application to Static Website",
-            "time": "2020-05-02T21:07:42+00:00"
+            "time": "2020-05-04T10:14:41+00:00"
         },
         {
             "name": "thecodingmachine/safe",
-            "version": "v1.1",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/safe.git",
-                "reference": "f440677bad66c0ef42fa3f875bf05718028af5d3"
+                "reference": "04f9ffae372a9816d4472dfb7bcf6126b623a9df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/f440677bad66c0ef42fa3f875bf05718028af5d3",
-                "reference": "f440677bad66c0ef42fa3f875bf05718028af5d3",
+                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/04f9ffae372a9816d4472dfb7bcf6126b623a9df",
+                "reference": "04f9ffae372a9816d4472dfb7bcf6126b623a9df",
                 "shasum": ""
             },
             "require": {
@@ -4822,6 +4708,7 @@
                     "generated/ps.php",
                     "generated/pspell.php",
                     "generated/readline.php",
+                    "generated/rpminfo.php",
                     "generated/rrd.php",
                     "generated/sem.php",
                     "generated/session.php",
@@ -4857,7 +4744,7 @@
                 "MIT"
             ],
             "description": "PHP core functions that throw exceptions instead of returning FALSE on error",
-            "time": "2020-03-24T13:59:42+00:00"
+            "time": "2020-05-04T15:25:36+00:00"
         },
         {
             "name": "twig/extra-bundle",
@@ -6763,16 +6650,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.19",
+            "version": "0.12.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "054f6d76b12ba9a6c13a5a8d5fcdf51219615f4d"
+                "reference": "59090e1b84efca9310e58586aeb787521aa00b10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/054f6d76b12ba9a6c13a5a8d5fcdf51219615f4d",
-                "reference": "054f6d76b12ba9a6c13a5a8d5fcdf51219615f4d",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/59090e1b84efca9310e58586aeb787521aa00b10",
+                "reference": "59090e1b84efca9310e58586aeb787521aa00b10",
                 "shasum": ""
             },
             "require": {
@@ -6801,7 +6688,21 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2020-04-19T20:35:10+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/phpstan",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-04T09:21:25+00:00"
         },
         {
             "name": "phpstan/phpstan-strict-rules",

@@ -490,13 +490,7 @@
     "symfony/yaml": {
         "version": "v5.0.7"
     },
-    "symplify/autodiscovery": {
-        "version": "v7.2.8"
-    },
     "symplify/autowire-array-parameter": {
-        "version": "v7.2.8"
-    },
-    "symplify/flex-loader": {
         "version": "v7.2.8"
     },
     "symplify/package-builder": {
