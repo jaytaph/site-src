@@ -20,6 +20,9 @@
             {% for article in articles %}
                 {{ include('article/line.html.twig', [article]) }}
             {% endfor %}
+            <div class="text-center p-2">
+                <a href="{{ path('article_list') }}" class="underline text-md text-gray-600">See all</a>
+            </div>
         </div>
     </div>
 </div>
