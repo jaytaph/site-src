@@ -6,7 +6,7 @@
         <div class="text-center sm:w-1/3 mx-auto border-b border-gray-400 pb-3">
             <h2 class="inline-block text-2xl text-gray-700 font-semibold ">Featured projects</h2>
         </div>
-        <div class="flex flex-row flex-wrap -mx-2 mt-4 justify-center ">
+        <div class="flex flex-wrap justify-center sm:-mx-2 mt-4">
             {% for project in projects %}
                 {{ include('project/card.html.twig', [project]) }}
             {% endfor %}
