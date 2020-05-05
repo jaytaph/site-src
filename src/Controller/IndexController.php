@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Collection\SliceableCollection;
 use App\Repository\ArticleRepositoryInterface;
 use App\Repository\ProjectRepositoryInterface;
 use Ramsey\Collection\CollectionInterface;
@@ -13,6 +14,8 @@ use Twig\Environment;
 
 final class IndexController
 {
+    private const MAX_ARTICLE_DISPLAY = 5;
+
     private Environment $twig;
 
     private ProjectRepositoryInterface $projectRepository;
@@ -34,9 +37,16 @@ final class IndexController
      */
     public function __invoke(): Response
     {
+        $articleCollection = $this->articleRepository->getAll()
+            ->sort('getDate', CollectionInterface::SORT_DESC);
+
+        if ($articleCollection instanceof SliceableCollection) {
+            $articleCollection = $articleCollection->slice(0, self::MAX_ARTICLE_DISPLAY);
+        }
+
         return new Response($this->twig->render('index.html.twig', [
             'projects' => $this->projectRepository->getAll(),
-            'articles' => $this->articleRepository->getAll()->sort('getDate', CollectionInterface::SORT_DESC),
+            'articles' => $articleCollection,
         ]));
     }
 }
