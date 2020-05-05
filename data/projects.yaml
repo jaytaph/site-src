@@ -2,14 +2,83 @@
     name: SimpleConfigBundle
     description: Expose your bundles configuration in a Web UI view.
     url: https://github.com/Jibbarth/SimpleConfigBundle
-    role: ~
+    category: !php/const App\Constant\ProjectCategory::FEATURED
+    role: !php/const App\Constant\Role::AUTHOR
+    image: ~
 -
     name: dev-pack
     description: '"Symfony Pack" that embed all dev tools I use to assert a great quality code'
     url: https://github.com/Jibbarth/dev-pack
-    role: ~
+    category: !php/const App\Constant\ProjectCategory::FEATURED
+    role: !php/const App\Constant\Role::AUTHOR
+    image: ~
 -
     name: PHP Insights
     description: Instant PHP quality checks from your console
     url: https://phpinsights.com
-    role: maintener
+    category: !php/const App\Constant\ProjectCategory::FEATURED
+    role: !php/const App\Constant\Role::MAINTENER
+    image: 'https://raw.githubusercontent.com/nunomaduro/phpinsights/v1.14.0/art/heart.png'
+-
+    name: Porftolio v1
+    description: My First Portfolio, build in 2013.
+    url: https://xn--jibbarth-d1a.fr/oldstuff/index.html
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::AUTHOR
+    image: https://xn--jibbarth-d1a.fr/oldstuff/images/portfolio.webp
+-
+    name: Porftolio v2
+    description: Created in 2019, an attempt with Jekyll
+    url: https://xn--jibbarth-d1a.fr/portfolio-jekyll/
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::AUTHOR
+    image: ~
+-
+    name: Face Emotion Write
+    description: Enable camera 🎥 Smile 😊 Have fun 👌
+    url: https://xn--jibbarth-d1a.fr/oldstuff/experiments/writeWithEmotion/index.html
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::AUTHOR
+    image: ~
+-
+    name: Moskova Workshop
+    description: Mockup of a web-site of communication around a sports event organized by Moskova
+    url: https://xn--jibbarth-d1a.fr/oldstuff/workshop/accueil.html
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::FRONT_END
+    image: https://xn--jibbarth-d1a.fr/oldstuff/images/workshop.png
+-
+    name: Nuits blanches
+    description: Mock up of website to make event around "Nuits blanches" in Paris
+    url: oldstuff/nuitblanche/accueil.html
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::FRONT_END
+    image: https://xn--jibbarth-d1a.fr/oldstuff/images/nuitblanche.png
+-
+    name: Carhartt Girl Collectif
+    description: Mock up of website to make event around Carhartt brand
+    url: https://xn--jibbarth-d1a.fr/oldstuff/carhartt/firstpage.html
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::FRONT_END
+    image: https://xn--jibbarth-d1a.fr/oldstuff/images/girlco.png
+-
+    name: "CSS Experiments # Move papers"
+    description: Simulate switching papers by hand in CSS
+    url: https://xn--jibbarth-d1a.fr/ChangePaper/
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::AUTHOR
+    image: https://xn--jibbarth-d1a.fr/oldstuff/images/paperMove.png
+-
+    name: Repetito
+    description: Mock up of collaborative website for the loop software Repetito
+    url: https://xn--jibbarth-d1a.fr/oldstuff/repetito/accueil.html
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::FRONT_END
+    image: https://xn--jibbarth-d1a.fr/oldstuff/images/repetito.png
+-
+    name: Typewritter
+    description: Enable sound 🔊 Type Words ⌨ Have fun 👌
+    url: https://xn--jibbarth-d1a.fr/typewritter/
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::AUTHOR
+    image: ~

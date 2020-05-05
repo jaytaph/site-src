@@ -7,8 +7,10 @@ namespace App\Repository;
 use App\Collection\ProjectCollection;
 use App\Model\Project;
 use InvalidArgumentException;
+use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Yaml\Yaml;
 
 final class FileProjectRepository implements ProjectRepositoryInterface
 {
@@ -18,16 +20,21 @@ final class FileProjectRepository implements ProjectRepositoryInterface
 
     private SluggerInterface $slugger;
 
+    /**
+     * @SuppressWarnings(PHPMD.StaticAccess)
+     */
     public function __construct(SerializerInterface $serializer, SluggerInterface $slugger, string $projectDir)
     {
         $filename = $projectDir . \DIRECTORY_SEPARATOR . 'data' . \DIRECTORY_SEPARATOR . self::FILENAME;
 
         $this->slugger = $slugger;
+
+        $data = Yaml::parse(\Safe\file_get_contents($filename), Yaml::PARSE_CONSTANT);
+        \assert($serializer instanceof DenormalizerInterface);
         /** @var array<Project> $projects */
-        $projects = $serializer->deserialize(
-            \file_get_contents($filename),
+        $projects = $serializer->denormalize(
+            $data,
             Project::class . '[]',
-            'yaml'
         );
 
         $this->projects = new ProjectCollection(\Safe\array_combine(\array_map(static function (Project $project) use ($slugger): string {
