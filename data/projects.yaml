@@ -1,3 +1,4 @@
+## Featured
 -
     name: SimpleConfigBundle
     description: Expose your bundles configuration in a Web UI view.
@@ -18,7 +19,22 @@
     url: https://phpinsights.com
     category: !php/const App\Constant\ProjectCategory::FEATURED
     role: !php/const App\Constant\Role::MAINTENER
-    image: 'https://raw.githubusercontent.com/nunomaduro/phpinsights/v1.14.0/art/heart.png'
+    image: https://raw.githubusercontent.com/nunomaduro/phpinsights/v1.14.0/art/heart.png
+-
+    name: Slack Newsletter
+    description: A Symfony Project to build a newsletter from a Slack workspace.
+    url: https://github.com/Jibbarth/slacknewsletter
+    category: !php/const App\Constant\ProjectCategory::FEATURED
+    role: !php/const App\Constant\Role::AUTHOR
+    image: ~
+-
+    name: Github Other Bugtracker
+    description: Chrome extension build with Haxe that enable other bugtracker like Redmine in github
+    url: https://github.com/Jibbarth/Github-Other-bugtracker
+    category: !php/const App\Constant\ProjectCategory::FEATURED
+    role: !php/const App\Constant\Role::AUTHOR
+    image: https://github.githubassets.com/pinned-octocat.svg
+## Old stuff
 -
     name: Porftolio v1
     description: My First Portfolio, build in 2013.
@@ -26,6 +42,13 @@
     category: !php/const App\Constant\ProjectCategory::OLD_STUFF
     role: !php/const App\Constant\Role::AUTHOR
     image: https://xn--jibbarth-d1a.fr/oldstuff/images/portfolio.webp
+-
+    name: Typewritter
+    description: Enable sound 🔊 Type Words ⌨ Have fun 👌
+    url: https://xn--jibbarth-d1a.fr/typewritter/
+    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
+    role: !php/const App\Constant\Role::AUTHOR
+    image: ~
 -
     name: Porftolio v2
     description: Created in 2019, an attempt with Jekyll
@@ -75,10 +98,3 @@
     category: !php/const App\Constant\ProjectCategory::OLD_STUFF
     role: !php/const App\Constant\Role::FRONT_END
     image: https://xn--jibbarth-d1a.fr/oldstuff/images/repetito.png
--
-    name: Typewritter
-    description: Enable sound 🔊 Type Words ⌨ Have fun 👌
-    url: https://xn--jibbarth-d1a.fr/typewritter/
-    category: !php/const App\Constant\ProjectCategory::OLD_STUFF
-    role: !php/const App\Constant\Role::AUTHOR
-    image: ~
