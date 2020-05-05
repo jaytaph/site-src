@@ -37,7 +37,7 @@ final class DetailController implements ControllerWithDataProviderInterface
 
     public function getControllerClass(): string
     {
-        return __CLASS__;
+        return self::class;
     }
 
     public function getControllerMethod(): string
