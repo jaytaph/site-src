@@ -73,7 +73,7 @@
 -
     name: Nuits blanches
     description: Mock up of website to make event around "Nuits blanches" in Paris
-    url: oldstuff/nuitblanche/accueil.html
+    url: https://xn--jibbarth-d1a.fr/oldstuff/nuitblanche/accueil.html
     category: !php/const App\Constant\ProjectCategory::OLD_STUFF
     role: !php/const App\Constant\Role::FRONT_END
     image: https://xn--jibbarth-d1a.fr/oldstuff/images/nuitblanche.png
