@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Controller\Article;
 
 use App\Constant\ArticleType;
 use App\Repository\ArticleRepositoryInterface;
@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symplify\SymfonyStaticDumper\Contract\ControllerWithDataProviderInterface;
 use Twig\Environment;
 
-final class ArticleController implements ControllerWithDataProviderInterface
+final class DetailController implements ControllerWithDataProviderInterface
 {
     private Environment $renderer;
 
@@ -37,7 +37,7 @@ final class ArticleController implements ControllerWithDataProviderInterface
 
     public function getControllerClass(): string
     {
-        return __CLASS__;
+        return self::class;
     }
 
     public function getControllerMethod(): string

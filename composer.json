@@ -31,8 +31,6 @@
         "symfony/validator": "5.0.*",
         "symfony/webpack-encore-bundle": "^1.7",
         "symfony/yaml": "5.0.*",
-        "symplify/autodiscovery": "^7.2",
-        "symplify/flex-loader": "^7.2",
         "symplify/symfony-static-dumper": "^7.2",
         "thecodingmachine/safe": "^1.1",
         "twig/extra-bundle": "^3.0",

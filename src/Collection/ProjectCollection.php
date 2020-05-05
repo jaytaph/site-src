@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\Collection;
 
-use App\Model\Article;
+use App\Model\Project;
 use Ramsey\Collection\AbstractCollection;
 
-final class ArticleCollection extends AbstractCollection implements SliceableCollection
+final class ProjectCollection extends AbstractCollection implements SliceableCollection
 {
     use SliceTrait;
 
     public function getType(): string
     {
-        return Article::class;
+        return Project::class;
     }
 }

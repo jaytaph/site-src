@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Collection\SliceableCollection;
+use App\Constant\ProjectCategory;
 use App\Repository\ArticleRepositoryInterface;
 use App\Repository\ProjectRepositoryInterface;
 use Ramsey\Collection\CollectionInterface;
@@ -13,6 +15,9 @@ use Twig\Environment;
 
 final class IndexController
 {
+    private const MAX_ARTICLE_DISPLAY = 5;
+    private const MAX_FEATURED_PROJECTS = 3;
+
     private Environment $twig;
 
     private ProjectRepositoryInterface $projectRepository;
@@ -34,9 +39,22 @@ final class IndexController
      */
     public function __invoke(): Response
     {
+        $featuredProjects = $this->projectRepository->getAll()
+            ->where('getCategory', ProjectCategory::FEATURED);
+        if ($featuredProjects instanceof SliceableCollection) {
+            $featuredProjects = $featuredProjects->slice(0, self::MAX_FEATURED_PROJECTS);
+        }
+
+        $articleCollection = $this->articleRepository->getAll()
+            ->sort('getDate', CollectionInterface::SORT_DESC);
+
+        if ($articleCollection instanceof SliceableCollection) {
+            $articleCollection = $articleCollection->slice(0, self::MAX_ARTICLE_DISPLAY);
+        }
+
         return new Response($this->twig->render('index.html.twig', [
-            'projects' => $this->projectRepository->getAll(),
-            'articles' => $this->articleRepository->getAll()->sort('getDate', CollectionInterface::SORT_DESC),
+            'projects' => $featuredProjects,
+            'articles' => $articleCollection,
         ]));
     }
 }

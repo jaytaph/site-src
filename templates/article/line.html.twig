@@ -1,0 +1,30 @@
+{% set url = path('article_detail', {type: article.type, article: article.id}) %}
+{% if article.type == constant('App\\Constant\\ArticleType::EXTERNAL') %}
+    {% set url = article.url %}
+{% endif %}
+<div class="border-b p-4">
+    <a href="{{ url }}"
+       class="text-lg text-gray-700 font-semibold hover:underline"
+        {% if article.type == constant('App\\Constant\\ArticleType::EXTERNAL') %}
+            target="_blank" rel="noopener,noreferrer"
+        {% endif %}
+    >
+        {% if article.type == constant('App\\Constant\\ArticleType::EXTERNAL') %}
+            <i class="fa fa-external-link-alt"></i>
+        {% endif %}
+        {{ article.title }}
+    </a>
+    <div class="flex justify-between">
+        <div>
+                            <span class="inline-block
+                                text-xs mr-2 my-1 uppercase tracking-wider border px-2
+                                text-gray-600 border-gray-600 hover:bg-gray-600 hover:text-gray-100 cursor-default">
+                                {{ article.type }}
+                            </span>
+        </div>
+        <div class="text-right text-sm text-gray-500">
+            <i class="fa fa-calendar-day"></i>
+            {{ article.date|format_date() }}
+        </div>
+    </div>
+</div>
