@@ -26,6 +26,7 @@
             {# Open Graph general #}
             <meta name="og:title" content="{{ block('title') }}">
             <meta name="og:description" content="{{ block('description') }}">
+            <meta name="og:image" content="{{ block('meta_image') }}">
             <meta name="og:url" content="{{ website_url ~ app.request.requestUri }}">
             <meta name="og:site_name" content="{{ author }}">
             <meta name="og:type" content="{% block og_type %}website{% endblock %}">
