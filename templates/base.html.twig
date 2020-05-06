@@ -13,7 +13,7 @@
             {# Search Engine #}
             <meta name="author" content="{{ author}}">
             <meta name="description" content="{% block description %}Personal website{% endblock %}">
-            <meta name="image" content="{% block meta_image %}{{ asset('img/site_preview.png') }}{% endblock %}">
+            <meta name="image" content="{% block meta_image %}{{ website_url }}{{ asset('img/site_preview.png') }}{% endblock %}">
             {# Schema.org for Google #}
             <meta itemprop="name" content="{{ block('title') }}">
             <meta itemprop="description" content="{{ block('description') }}">
