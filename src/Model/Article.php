@@ -79,7 +79,7 @@ final class Article
 
     public function getAbstract(): string
     {
-        return u($this->content ?? '')->truncate(200, '...')->toString();
+        return u($this->content ?? '')->replace($this->title, '')->truncate(200, '...')->toString();
     }
 
     /**

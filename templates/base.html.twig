@@ -4,12 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="author" content="{{ author}}">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-        <title>{% block title %}{{ author }} // Portfolio{% endblock %}</title>
+        {% block meta %}
+            <title>{% block title %}{{ author }} // Portfolio{% endblock %}</title>
+            {# Search Engine #}
+            <meta name="author" content="{{ author}}">
+            <meta name="description" content="{% block description %}Personal website{% endblock %}">
+            <meta name="image" content="{% block meta_image %}{{ asset('img/site_preview.png') }}{% endblock %}">
+            {# Schema.org for Google #}
+            <meta itemprop="name" content="{{ block('title') }}">
+            <meta itemprop="description" content="{{ block('description') }}">
+            <meta itemprop="image" content="{{ block('meta_image') }}">
+            {# Twitter #}
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@{{ github_user }}">
+            <meta name="twitter:creator" content="@{{ github_user }}">
+            <meta name="twitter:image" content="{{ block('meta_image') }}">
+            {# Open Graph general #}
+            <meta name="og:title" content="{{ block('title') }}">
+            <meta name="og:description" content="{{ block('description') }}">
+            <meta name="og:url" content="{{ website_url ~ app.request.requestUri }}">
+            <meta name="og:site_name" content="{{ author }}">
+            <meta name="og:type" content="{% block og_type %}website{% endblock %}">
+        {% endblock %}
         {% block stylesheets %}
             {{ encore_entry_link_tags('tailwind') }}
             {{ encore_entry_link_tags('app') }}
@@ -18,7 +38,7 @@
     <body class="flex flex-col min-h-screen bg-gray-300 font-sans">
         <header>
             {% block header %}
-            <div class="bg-gray-200 mb-6 pb-6 w-full h-auto flex flex-col items-center shadow-sm">
+            <div class="bg-gray-100 mb-6 pb-6 w-full h-auto flex flex-col items-center shadow-sm">
                 <div class="h-64 xl:h-full w-full">
                     {% block header_image %}
                     <img class="h-full w-full object-cover" src="{{ unsplash('web-site', 1600, 300) }}">
