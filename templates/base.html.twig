@@ -13,7 +13,7 @@
             {# Search Engine #}
             <meta name="author" content="{{ author}}">
             <meta name="description" content="{% block description %}Personal website{% endblock %}">
-            <meta name="image" content="{% block meta_image %}{{ website_url }}{{ asset('img/site_preview.png') }}{% endblock %}">
+            <meta name="image" content="{% block meta_image %}{{ (website_url ~ asset('img/site_preview.png'))|sanitize_url }}{% endblock %}">
             {# Schema.org for Google #}
             <meta itemprop="name" content="{{ block('title') }}">
             <meta itemprop="description" content="{{ block('description') }}">
@@ -27,7 +27,7 @@
             <meta name="og:title" content="{{ block('title') }}">
             <meta name="og:description" content="{{ block('description') }}">
             <meta name="og:image" content="{{ block('meta_image') }}">
-            <meta name="og:url" content="{{ website_url ~ app.request.requestUri }}">
+            <meta name="og:url" content="{{ (website_url ~ app.request.requestUri)|sanitize_url }}">
             <meta name="og:site_name" content="{{ author }}">
             <meta name="og:type" content="{% block og_type %}website{% endblock %}">
         {% endblock %}
