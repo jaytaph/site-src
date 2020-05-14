@@ -1,6 +1,6 @@
 const purgecss = require('@fullhuman/postcss-purgecss')({
     content: ['./templates/**/*.html.twig'],
-    whitelistPatternsChildren: [/token$/, /pre$/, /code$/],
+    whitelistPatternsChildren: [/token$/, /pre$/, /code$/, /fa/],
     whitelist: ['emoji', 'markdown']
 })
 
