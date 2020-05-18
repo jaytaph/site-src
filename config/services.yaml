@@ -5,6 +5,7 @@ parameters:
     author: Jibé Barth
     website_url: https://jibébarth.fr
     gravatar_hash: f7a23636c530faa0ceca6199226902e7
+    ga: UA-39521443-1
     social:
         github:
             username: '%github_user%'

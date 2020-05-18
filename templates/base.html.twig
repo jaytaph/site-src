@@ -90,6 +90,17 @@
         {% block javascripts %}
             <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" rel="prefetch" crossorigin="anonymous"></script>
             {{ encore_entry_script_tags('app') }}
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga }}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-39521443-1');
+            </script>
+
         {% endblock %}
     </body>
 </html>

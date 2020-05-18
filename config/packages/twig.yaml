@@ -5,3 +5,4 @@ twig:
         author: '%author%'
         gravatar_hash: '%gravatar_hash%'
         website_url: '%website_url%'
+        ga: '%ga%'
