@@ -103,4 +103,9 @@ body .markdown> h1:first-child  {
 .markdown td {
   @apply border py-1 px-3;
 }
+
+.markdown img {
+    @apply m-auto;
+}
+
 /* purgecss stop ignore */
