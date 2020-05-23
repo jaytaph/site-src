@@ -14,14 +14,16 @@ use function Symfony\Component\String\u;
 final class BadgeUserRepository
 {
     private Api $api;
-    /**
-     * @var \Symfony\Contracts\HttpClient\HttpClientInterface
-     */
+
     private HttpClientInterface $client;
+
     private string $userUuid;
 
-    public function __construct(HttpClientInterface $client, VndComSymfonyConnectXmlParser $parser, string $sfConnectUser)
-    {
+    public function __construct(
+        HttpClientInterface $client,
+        VndComSymfonyConnectXmlParser $parser,
+        string $sfConnectUser
+    ) {
         $this->api = new Api(null, $client, $parser);
         $this->client = $client;
         $this->userUuid = $sfConnectUser;
