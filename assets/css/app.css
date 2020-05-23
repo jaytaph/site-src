@@ -5,3 +5,7 @@ img.emoji {
     vertical-align: text-bottom;
     display: inline-block;
 }
+
+.badge-container:hover .badge-info {
+    @apply -translate-y-32;
+}

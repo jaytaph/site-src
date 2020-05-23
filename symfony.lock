@@ -490,6 +490,9 @@
     "symfony/yaml": {
         "version": "v5.0.7"
     },
+    "symfonycorp/connect": {
+        "version": "v6.1.0"
+    },
     "symplify/autowire-array-parameter": {
         "version": "v7.2.8"
     },
