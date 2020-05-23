@@ -42,14 +42,12 @@
             <div class="mb-4 sm:px-2">
                 <div class="badge-container transition duration-150 ease-in-out transform hover:-translate-y-1 hover:scale-110
                 relative bg-white shadow h-32 w-32 rounded-full overflow-hidden border-2 border-white">
-                    <a href="{{ badge.alternateUrl }}" title="{{ badge.name }}" target="_blank" rel="noopener,noreferrer">
-                        <img class="object-cover w-full h-full" src="{{ badge.image }}">
-                        <div class="badge-info absolute transition-all transform duration-200 delay-150 ease-in-out mt-1 flex bg-gray-300 rounded-full bg-opacity-75 w-full h-full">
-                            <div class="p-2 m-auto text-center self-center">
-                                <p class="text-sm font-semibold text-gray-800">{{ badge.name }}</p>
-                            </div>
-                        </div>
-                    </a>
+                    <img class="object-cover w-full h-full" src="{{ badge.image }}" alt="{{ badge.name }}"/>
+                    <div class="badge-info absolute transition-all transform duration-200 delay-150 ease-in-out mt-1 flex bg-gray-300 rounded-full bg-opacity-75 w-full h-full">
+                        <a href="{{ badge.alternateUrl }}" class="block p-2 m-auto text-center self-center" target="_blank" rel="noopener,noreferrer">
+                            <p class="text-sm font-semibold text-gray-800">{{ badge.name }}</p>
+                        </a>
+                    </div>
                 </div>
             </div>
             {% endfor %}
