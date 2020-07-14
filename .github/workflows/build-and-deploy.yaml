@@ -46,7 +46,7 @@ jobs:
             -   name: Build 📦
                 run: bin/console dump-static-site --ansi
                 env:
-                    GITHUB_USERNAME: ${{ secrets.GITHUB_TOKEN }}
+                    GITHUB_USERNAME: ${{ secrets.ACCESS_TOKEN }}
             -   name: Deploy 🚀
                 uses: JamesIves/github-pages-deploy-action@releases/v3
                 with:
@@ -74,7 +74,7 @@ jobs:
             -   name: Build 📦
                 run: bin/console generate-readme --ansi
                 env:
-                    GITHUB_USERNAME: ${{ secrets.GITHUB_TOKEN }}
+                    GITHUB_USERNAME: ${{ secrets.ACCESS_TOKEN }}
             -   name: Deploy 🚀
                 uses: JamesIves/github-pages-deploy-action@releases/v3
                 with:
