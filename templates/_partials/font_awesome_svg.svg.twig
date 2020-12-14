@@ -1,0 +1,20 @@
+<svg viewBox="0 0 {{ size }} {{ size }}" width="{{ size }}" height="{{ size }}" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="{{ size }}" height="{{ size }}">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                @media (prefers-color-scheme: dark) {
+                    svg {
+                        fill:  #C3C3C3;
+                    }
+                }
+                @media (prefers-color-scheme: light) {
+                    svg {
+                        fill:  #3C3C3C;
+                    }
+                }
+            </style>
+            {{ fa_svg|raw }}
+        </div>
+    </foreignObject>
+</svg>
+
