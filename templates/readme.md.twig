@@ -57,7 +57,7 @@ I'm **{{ readme.job_position|capitalize }}** at **{{ readme.society }}** based i
 **🌟 Latest Stars**:
 
 {% for star in stars %}
-* [{{ star.nameWithOwner }}]({{ star.url }}) {% if star.description is not empty %} - _{{ star.description }}_{% endif %}
+* [{{ star.nameWithOwner }}]({{ star.url }}) {% if star.description is not empty %} - _{{ star.description | trim }}_{% endif %}
 
 {% endfor %}{% endif %}
 
