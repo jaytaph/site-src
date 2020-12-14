@@ -13,9 +13,7 @@ use Twig\Environment;
 final class NetworkImageController implements ControllerWithDataProviderInterface
 {
     private Environment $twig;
-    /**
-     * @var \Symfony\Contracts\HttpClient\HttpClientInterface
-     */
+
     private HttpClientInterface $client;
 
     public function __construct(
