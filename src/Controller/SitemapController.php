@@ -38,7 +38,7 @@ final class SitemapController
             if (u($routeName)->containsAny(self::$toExclude)) {
                 continue;
             }
-            $urls[] = ['loc' => $this->websiteUrl . $this->router->generate($routeName)];
+            $urls[] = ['loc' => $this->websiteUrl . u($this->router->generate($routeName))->ensureEnd('/')->toString()];
         }
 
         /** @var \App\Model\Article $article */
@@ -48,10 +48,10 @@ final class SitemapController
             }
 
             $urls[] = [
-                'loc' => $this->websiteUrl . $this->router->generate('article_detail', [
+                'loc' => $this->websiteUrl . u($this->router->generate('article_detail', [
                     'type' => $article->getType(),
                     'article' => $article->getId(),
-                ]),
+                ]))->ensureEnd('/')->toString(),
                 'lastmod' => $article->getDate()->format('Y-m-d'),
             ];
         }
