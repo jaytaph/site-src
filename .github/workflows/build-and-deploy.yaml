@@ -43,9 +43,9 @@ jobs:
                     php-version: 8.0
                     coverage: none
             -   uses: actions/setup-node@v1
+            -   run: composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --no-suggest
             -   run: yarn install --force
             -   run: yarn encore prod
-            -   run: composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --no-suggest
             -   name: Build 📦
                 run: bin/console dump-static-site --ansi
                 env:
@@ -74,8 +74,8 @@ jobs:
                     php-version: 8.0
                     coverage: none
             -   uses: actions/setup-node@v1
-            -   run: yarn install --force
             -   run: composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --no-suggest
+            -   run: yarn install --force
             -   name: Build 📦
                 run: bin/console generate-readme --ansi
                 env:
