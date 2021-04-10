@@ -43,7 +43,7 @@ jobs:
                     php-version: 8.0
                     coverage: none
             -   uses: actions/setup-node@v1
-            -   run: yarn install
+            -   run: yarn install --force
             -   run: yarn encore prod
             -   run: composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --no-suggest
             -   name: Build 📦
@@ -74,7 +74,7 @@ jobs:
                     php-version: 8.0
                     coverage: none
             -   uses: actions/setup-node@v1
-            -   run: yarn install
+            -   run: yarn install --force
             -   run: composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --no-suggest
             -   name: Build 📦
                 run: bin/console generate-readme --ansi
