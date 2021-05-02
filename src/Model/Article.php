@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Model;
 
+use App\Constant\ArticleStatus;
 use App\Constant\ArticleType;
 use Symfony\Component\Validator\Constraints as Assert;
 use function Symfony\Component\String\u;
@@ -14,7 +15,7 @@ final class Article
 
     private string $title;
 
-    private ?string $content;
+    private string $content = '';
 
     private \DateTimeInterface $date;
 
@@ -30,21 +31,20 @@ final class Article
      */
     private array $files = [];
 
+    private ?string $image = null;
+
+    private string $status = ArticleStatus::PUBLISHED;
+
     public function __construct(string $id, string $title, ?string $content, \DateTimeInterface $date, ?string $url)
     {
         $this->id = $id;
         $this->title = $title;
-        $this->content = $content;
         $this->url = $url;
         $this->date = $date;
-
-        $this->type = ArticleType::INTERNAL;
-        if (null === $content && null !== $url) {
-            $this->type = ArticleType::EXTERNAL;
+        if (null !== $content) {
+            $this->content = $content;
         }
-        if (null !== u($url ?? '')->indexOf('gist.github.com')) {
-            $this->type = ArticleType::GIST;
-        }
+        $this->defineType();
     }
 
     public function getId(): string
@@ -79,7 +79,10 @@ final class Article
 
     public function getAbstract(): string
     {
-        return u($this->content ?? '')->replace($this->title, '')->truncate(200, '...')->toString();
+        return u($this->content)
+            ->replace($this->title, '')
+            ->truncate(200, '...')
+            ->toString();
     }
 
     /**
@@ -98,5 +101,40 @@ final class Article
         $this->files = $files;
 
         return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function withImage(string $imageUrl): self
+    {
+        $this->image = $imageUrl;
+
+        return $this;
+    }
+
+    public function markInDraft(): self
+    {
+        $this->status = ArticleStatus::DRAFT;
+
+        return $this;
+    }
+
+    public function isPublished(): bool
+    {
+        return ArticleStatus::PUBLISHED === $this->status;
+    }
+
+    private function defineType(): void
+    {
+        $this->type = ArticleType::INTERNAL;
+        if ('' === $this->content && null !== $this->url) {
+            $this->type = ArticleType::EXTERNAL;
+        }
+        if (null !== u($this->url ?? '')->indexOf('gist.github.com')) {
+            $this->type = ArticleType::GIST;
+        }
     }
 }
