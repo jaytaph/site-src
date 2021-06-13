@@ -8,4 +8,4 @@ import '@fortawesome/fontawesome-free/js/all.min'
 // import $ from 'jquery';
 import '../bootstrap'
 
-document.addEventListener('DOMContentLoaded', () => twemoji.parse(document.body), false);
+window.addEventListener('load', () => twemoji.parse(document.body), false);

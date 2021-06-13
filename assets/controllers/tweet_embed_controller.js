@@ -9,21 +9,28 @@ export default class extends Controller {
     }
 
     connect() {
-        console.log({'tweetId': this.idValue, 'conversation': this.convValue})
-        if (!window.twttr) {
-            // twitterscript not yet loaded. force load
-            console.error('Twittter script is not yet loaded');
-            return;
+        if (document.readyState === "complete") {
+            this._loadTweet();
+             return;
         }
 
+        window.addEventListener('load', () => this._loadTweet());
+    }
+
+    _loadTweet() {
         window.twttr.widgets.createTweet(
             this.idValue,
             this.element,
             {
                 conversation: this.convValue ? 'yes': 'none',
                 align: 'center',
-                dnt: true // do not track
+                dnt: true, // do not track
+                theme: this._isDarkMode() ? 'dark': null,
             }
         );
+    }
+
+    _isDarkMode() {
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 }
