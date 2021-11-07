@@ -166,6 +166,13 @@ return [
 ];
 ```
 
+To avoid recursive assets installation, create a `Resources/public` folder at the root of your project:
+
+```bash
+# ~/Projects/main-app
+mkdir -p Resources/public
+```
+
 For the services and package configuration that I have to change, I decided to create a `config/bundle` folder to isolate them from the standalone app.
 
 I also decided to use a `services.php` instead a yaml file, but it's up to you.
