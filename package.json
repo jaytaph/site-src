@@ -7,25 +7,27 @@
   "license": "MIT",
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.2",
-    "@hotwired/turbo": "^7.0.0-rc.1",
-    "@symfony/stimulus-bridge": "^2.0.2",
+    "@hotwired/stimulus": "^3.0.0",
+    "@hotwired/turbo": "^7.0.1",
+    "@symfony/stimulus-bridge": "^3.0",
     "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/Resources/assets",
+    "autoprefixer": "^10.4.0",
     "node-sass": "^4.13.1",
-    "postcss-loader": "^3.0.0",
+    "postcss": "^8.4.5",
+    "postcss-loader": "^4.3.0",
     "sass-loader": "^10.0.0",
-    "stimulus": "^2.0.0",
     "webpack-notifier": "^1.6.0"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "@symfony/webpack-encore": "^1.0.0",
+    "@symfony/webpack-encore": "^1.7",
     "babel-plugin-prismjs": "^2.0.1",
     "core-js": "^3.6.5",
     "jsonp": "^0.2.1",
     "prism-themes": "^1.6.0",
     "prismjs": "^1.25.0",
     "tailwind": "^4.0.0",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^3.0.7"
   }
 }
