@@ -8,7 +8,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 final class TenorGifLinkProvider implements GifLinkProviderInterface
 {
-    private const RANDOM_URL = 'http://api.tenor.com/v1/random?key=LIVDSRZULELA&limit=1&q=';
+    private const RANDOM_URL = 'https://api.tenor.com/v1/random?key=LIVDSRZULELA&limit=1&q=';
 
     private HttpClientInterface $client;
 
