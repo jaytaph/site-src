@@ -12,8 +12,6 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 use SymfonyCorp\Connect\Api\Api;
 use SymfonyCorp\Connect\Api\Entity\Badge as SfBadge;
 
-use function Symfony\Component\String\u;
-
 final class SymfonyBadge implements BadgeRepositoryInterface
 {
     private Api $api;
@@ -37,10 +35,12 @@ final class SymfonyBadge implements BadgeRepositoryInterface
         $root = $this->api->getRoot();
         $user = $root->getUser($this->userUuid);
         $badges = $user->getBadges();
-        $badges = array_map(function (SfBadge $badge) use ($root): Badge {
+        $badgeImages = $this->resolveBadgeImages($badges->getItems());
+
+        $badges = array_map(function (SfBadge $badge) use ($root, $badgeImages): Badge {
             /** @var SfBadge $badge */
             $badge = $root->getBadge($badge->getId());
-            $badge->setImage($this->resolveImage($badge->getImage()));
+            $badge->setImage($badgeImages[$badge->getId()]);
 
             return new Badge(
                 (string) $badge->getId(),
@@ -60,16 +60,28 @@ final class SymfonyBadge implements BadgeRepositoryInterface
         return 'SymfonyConnect';
     }
 
-    private function resolveImage(string $url): string
+    /**
+     * @param array<SfBadge> $badges
+     *
+     * @return array<int, string>
+     */
+    private function resolveBadgeImages(array $badges): array
     {
-        $response = $this->client->request('GET', $url);
-        $response->getContent();
-
-        $imageUrl = $response->getInfo('url') ?? $url;
-        if (!\is_string($imageUrl)) {
-            throw new \RuntimeException(sprintf('Unable to resolve image url: %s', $url));
+        $responses = [];
+        foreach ($badges as $badge) {
+            $responses[$badge->getId()] = $this->client->request('GET', $badge->getImage());
         }
 
-        return u($imageUrl)->replace('30x30', '200x200')->toString();
+        $return = [];
+        foreach ($responses as $id => $response) {
+            $response->getHeaders();
+            $imageUrl = $response->getInfo('url');
+            if (!\is_string($imageUrl)) {
+                throw new \RuntimeException('Unable to resolve image url');
+            }
+            $return[$id] = $imageUrl;
+        }
+
+        return $return;
     }
 }
