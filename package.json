@@ -13,7 +13,7 @@
     "@symfony/ux-lazy-image": "file:vendor/symfony/ux-lazy-image/assets",
     "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets",
     "autoprefixer": "^10.4.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "postcss": "^8.4.5",
     "postcss-loader": "^4.3.0",
     "sass-loader": "^10.0.0",
