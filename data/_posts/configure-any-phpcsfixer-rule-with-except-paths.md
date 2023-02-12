@@ -1,7 +1,7 @@
 ---
 title: "[PHP-CS-Fixer] Configure any rule with except paths"
 date: 2023-02-12
-state: draft
+state: published
 ---
 
 > Based on a true story.
