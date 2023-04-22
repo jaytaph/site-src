@@ -15,7 +15,7 @@ parameters: &parameters
         twitter:
             username: jibbarth
         linkedin:
-            username: 'in/jibé-b-772884a3'
+            username: 'in/jibébarth'
         symfony:
             username: 'profile/jibbarth'
             prefix: 'connect.'
@@ -25,7 +25,6 @@ parameters: &parameters
         - API Platform
         - Open Source
         - Code Quality
-        - VueJS
         - Tailwind
         - Docker
     readme:
