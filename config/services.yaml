@@ -35,19 +35,15 @@ parameters: &parameters
         job_position: Lead developer
         society: Synolia
         website: https://jibébarth.fr
+    min_diff_to_be_outdated: 365
 
 twig:
     globals: *parameters
 
 services:
     _defaults:
-        autowire: true      # Automatically injects dependencies in your services.
-        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
-        bind:
-            string $projectDir: '%kernel.project_dir%'
-            string $sfConnectUser: '%sf_connect_uuid%'
-            int $minDiffInDayToBeOutdated: 365
-
+        autowire: true
+        autoconfigure: true
     App\:
         resource: '../src/*'
         exclude: '../src/{DependencyInjection,Model,Migrations,Tests,Kernel.php}'
