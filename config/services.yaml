@@ -36,6 +36,9 @@ parameters: &parameters
         society: Synolia
         website: https://jibébarth.fr
 
+twig:
+    globals: *parameters
+
 services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
@@ -62,11 +65,6 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    # replace default markdown by our markdown configured
-    twig.markdown.default: '@App\Twig\Extra\Markdown'
-
     Psr\Container\ContainerInterface:
         alias: "service_container"
 
-twig:
-    globals: *parameters
