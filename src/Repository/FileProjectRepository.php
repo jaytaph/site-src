@@ -23,7 +23,7 @@ final class FileProjectRepository implements ProjectRepositoryInterface
      */
     public function __construct(
         private SluggerInterface $slugger,
-        SerializerInterface&DenormalizerInterface $serializer,
+        SerializerInterface $serializer,
         #[Autowire('%kernel.project_dir%')]
         string $projectDir
     ) {
@@ -31,6 +31,7 @@ final class FileProjectRepository implements ProjectRepositoryInterface
 
         $data = Yaml::parse(\Safe\file_get_contents($filename), Yaml::PARSE_CONSTANT);
 
+        \assert($serializer instanceof DenormalizerInterface);
         /** @var array<Project> $projects */
         $projects = $serializer->denormalize($data, Project::class . '[]');
 
