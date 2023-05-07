@@ -19,24 +19,12 @@ final class IndexController
     private const MAX_ARTICLE_DISPLAY = 5;
     private const MAX_FEATURED_PROJECTS = 3;
 
-    private Environment $twig;
-
-    private ProjectRepositoryInterface $projectRepository;
-
-    private ArticleRepositoryInterface $articleRepository;
-
-    private BadgeRepositoryInterface $badgeRepository;
-
     public function __construct(
-        Environment $twig,
-        ProjectRepositoryInterface $projectRepository,
-        ArticleRepositoryInterface $articleRepository,
-        BadgeRepositoryInterface $badgeRepository
+        private Environment $twig,
+        private ProjectRepositoryInterface $projectRepository,
+        private ArticleRepositoryInterface $articleRepository,
+        private BadgeRepositoryInterface $badgeRepository
     ) {
-        $this->twig = $twig;
-        $this->projectRepository = $projectRepository;
-        $this->articleRepository = $articleRepository;
-        $this->badgeRepository = $badgeRepository;
     }
 
     #[Route('/', name: 'home')]

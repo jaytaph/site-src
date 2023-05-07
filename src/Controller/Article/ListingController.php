@@ -13,20 +13,11 @@ use Twig\Environment;
 
 final class ListingController
 {
-    private Environment $renderer;
-
-    private ArticleRepositoryInterface $repository;
-
-    private RequestStack $requestStack;
-
     public function __construct(
-        Environment $renderer,
-        ArticleRepositoryInterface $repository,
-        RequestStack $requestStack
+        private Environment $renderer,
+        private ArticleRepositoryInterface $repository,
+        private RequestStack $requestStack
     ) {
-        $this->renderer = $renderer;
-        $this->repository = $repository;
-        $this->requestStack = $requestStack;
     }
 
     #[Route('/blog', name: 'article_list', defaults: ['_format' => 'html'], methods: ['GET'])]
