@@ -45,10 +45,7 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             string $projectDir: '%kernel.project_dir%'
-            string $githubUser: '%github_user%'
             string $sfConnectUser: '%sf_connect_uuid%'
-            string $afupEmail: '%env(resolve:AFUP_USERNAME)%'
-            string $afupPassword: '%env(resolve:AFUP_PWD)%'
             int $minDiffInDayToBeOutdated: 365
 
     App\:
