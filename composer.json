@@ -119,9 +119,9 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "5.4.*|^6.0"
+            "require": "5.4.*|^6.3@beta"
         }
     },
     "prefer-stable": true,
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
