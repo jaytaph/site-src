@@ -62,15 +62,6 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    App\Repository\Badge\:
-        resource: '../src/Repository/Badge/*'
-        tags: ['app.badge_repository']
-
-    App\Repository\ChainBadgeRepository:
-        arguments:
-            - !tagged_iterator app.badge_repository
-    App\Repository\BadgeRepositoryInterface: '@App\Repository\ChainBadgeRepository'
-
     App\Asset\ResetEntrypointLookup:
         decorates: 'webpack_encore.entrypoint_lookup[_default]'
         arguments:
