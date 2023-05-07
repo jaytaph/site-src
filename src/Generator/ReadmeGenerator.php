@@ -18,28 +18,13 @@ final class ReadmeGenerator
 {
     private const FILENAME = 'output/README.md';
 
-    private Environment $twig;
-
-    private ProjectRepositoryInterface $projectRepository;
-
-    private ArticleRepositoryInterface $articleRepository;
-
-    private LastPrRetriever $lastPrRetriever;
-
-    private LastStarRetriever $lastStarRetriever;
-
     public function __construct(
-        Environment $twig,
-        ProjectRepositoryInterface $projectRepository,
-        ArticleRepositoryInterface $articleRepository,
-        LastPrRetriever $lastPrRetriever,
-        LastStarRetriever $lastStarRetriever
+        private Environment $twig,
+        private ProjectRepositoryInterface $projectRepository,
+        private ArticleRepositoryInterface $articleRepository,
+        private LastPrRetriever $lastPrRetriever,
+        private LastStarRetriever $lastStarRetriever
     ) {
-        $this->twig = $twig;
-        $this->projectRepository = $projectRepository;
-        $this->articleRepository = $articleRepository;
-        $this->lastPrRetriever = $lastPrRetriever;
-        $this->lastStarRetriever = $lastStarRetriever;
     }
 
     public function generate(): void
