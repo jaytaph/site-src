@@ -45,18 +45,12 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             string $projectDir: '%kernel.project_dir%'
-            iterable $gifProviders: !tagged_iterator app.gif_provider
             string $githubUser: '%github_user%'
             string $sfConnectUser: '%sf_connect_uuid%'
-            string $websiteUrl: '%website_url%'
             string $afupEmail: '%env(resolve:AFUP_USERNAME)%'
             string $afupPassword: '%env(resolve:AFUP_PWD)%'
-            string $env: '%kernel.environment%'
             int $minDiffInDayToBeOutdated: 365
 
-    _instanceof:
-        App\Gif\GifLinkProviderInterface:
-            tags: ['app.gif_provider']
     App\:
         resource: '../src/*'
         exclude: '../src/{DependencyInjection,Model,Migrations,Tests,Kernel.php}'
