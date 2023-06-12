@@ -117,7 +117,7 @@ We hope you'll enjoy this new release 😊
 
 ## What's coming next ?
 
-We've few ideas for the following releases.
+We have a few ideas for the following releases.
 
 We thought about integrate [Rector](https://getrector.org/), and [@50bhan](https://twitter.com/50bhan) already start working on this.
 
